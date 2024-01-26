@@ -14,20 +14,24 @@ unsigned long long factorial(int n)
     }
 }
 
+long double sumOfSeries(int num, int term)
+{
+    long double sum, result = 0;
+    int i;
+    for (i = 1; i < term; i++)
+    {
+        sum = pow(num, 2 * i) / factorial(2 * i);
+        result = result + (pow(-1, i) * sum);
+    }
+    return result + num;
+}
 int main()
 {
-    int x, n;
-    cout << "Enter the value of x: ";
-    cin >> x;
+    int num, term;
+    cout << "Enter the value of number: ";
+    cin >> num;
     cout << "\nEnter the number of terms: ";
-    cin >> n;
-    float sum = 0.0;
-    for (int i = 0; i < n; ++i)
-    {
-        float term = pow(-1, i) * pow(x, 2 * i) / static_cast<float>(factorial(2 * i));
-        sum += term;
-    }
-
-    cout << "The sum of the series is : " << sum << endl;
-    return 0;
+    cin >> term;
+    int sumSeries = sumOfSeries(num, term);
+    cout << "\nThe Sum of Series is :" << sumSeries;
 }
