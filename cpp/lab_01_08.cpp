@@ -34,4 +34,5 @@ int main()
     cin >> term;
     int sumSeries = sumOfSeries(num, term);
     cout << "\nThe Sum of Series is :" << sumSeries;
+    return 0;
 }

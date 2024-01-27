@@ -10,27 +10,16 @@ int main()
     cin >> y;
     cout << "\nEnter Third Number ";
     cin >> z;
-    if (x >= y)
-    {
-        if (x >= z)
-        {
-            a = x;
-        }
-
-        else
-        {
-            a = z;
-        }
-    }
-    else if (y >= z)
+    a = x;
+    if (y < a)
     {
         a = y;
     }
-    else
+    if (z < a)
     {
         a = z;
     }
-    cout << "\nThe maximum value is : ";
+    cout << "\nThe minimum value is : ";
     cout << a;
     return 0;
 }

@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     string str_1;
-    cout << "Enter String:";
+    cout << "Enter String: ";
     getline(cin, str_1);
 
     cout << str_1;

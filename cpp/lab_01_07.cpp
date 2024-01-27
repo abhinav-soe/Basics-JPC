@@ -20,9 +20,7 @@ int placeValueDifference(int nthDigit, int nth_1Digit, int digitPosition)
 {
     int nthDigitPlace = nthDigit * pow(10, digitPosition - 1);
     int nth_1DigitPlace = nth_1Digit * pow(10, digitPosition);
-    cout << nthDigitPlace << endl;
-    cout << nth_1DigitPlace << endl;
-    return nthDigitPlace - nth_1DigitPlace;
+    return abs(nthDigitPlace - nth_1DigitPlace);
 }
 
 int main()
@@ -34,9 +32,7 @@ int main()
     cout << "Enter the position: ";
     cin >> digitPosition;
     nthDigit = findDigit(originalNumber, digitPosition);
-    cout << nthDigit << endl;
     nth_1Digit = findDigit(originalNumber, digitPosition + 1);
-    cout << nth_1Digit << endl;
     int diff = placeValueDifference(nthDigit, nth_1Digit, digitPosition);
     cout << "The difference between digits is: ";
     cout << diff;

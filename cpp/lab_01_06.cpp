@@ -4,11 +4,13 @@ using namespace std;
 int main()
 {
     int n;
+    long sum = 0;
     cout << "Enter The Limit: ";
     cin >> n;
-    cout << "The Natural Number are as follows:-" << endl;
     for (int i = 1; i <= n; i++)
     {
-        cout << i << endl;
+        sum += i;
     }
+    cout << "\nThe sum is: " << sum;
+    return 0;
 }

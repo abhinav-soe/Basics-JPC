@@ -9,8 +9,8 @@ int main()
     string str, word;
     cout << "Enter a sentence: ";
     getline(cin, str);
-    istringstream iss(str);
-    while (iss >> word)
+    istringstream it(str);
+    while (it >> word)
     {
         cout << word << '\n';
     }
