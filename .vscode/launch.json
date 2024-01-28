@@ -1,6 +1,27 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "switch_s",
+            "request": "launch",
+            "mainClass": "switch_s",
+            "projectName": "Basics-JPC_a0f3a903"
+        },
+        {
+            "type": "java",
+            "name": "lab_01_06_equi",
+            "request": "launch",
+            "mainClass": "lab_01_06_equi",
+            "projectName": "Basics-JPC_a0f3a903"
+        },
+        {
+            "type": "java",
+            "name": "readingInput",
+            "request": "launch",
+            "mainClass": "readingInput",
+            "projectName": "Basics-JPC_a0f3a903"
+        },
+        {
             "name": "C/C++: g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
