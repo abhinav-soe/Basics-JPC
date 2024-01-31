@@ -1,59 +1,47 @@
-// Write a C++ program to display a linear representation of the sparse matrix
+// Write a C++ program to display a linear representation of the sparse matrix.
 #include <iostream>
-
 using namespace std;
-
-#define R 4 // Number of rows
-#define C 5 // Number of columns
-
-int main()
+#define MAX_ROW 50
+#define MAX_COL 50
+void sparseToLinear(int row, int col)
 {
-    // Sparse matrix (replace with your actual matrix)
-    int sparseMatrix[R][C] = {
-        {0, 5, 0, 0, 0},
-        {0, 0, 8, 0, 0},
-        {0, 0, 0, 3, 0},
-        {0, 0, 0, 0, 0}};
-
-    // Count non-zero elements
-    int count = 0;
-    for (int i = 0; i < R; i++)
+    int sparse_Matrix[MAX_ROW][MAX_COL], linear[MAX_ROW][3];
+    int i, j, k = 0;
+    cout << "Enter values for matrix" << endl;
+    for (i = 0; i < row; i++)
     {
-        for (int j = 0; j < C; j++)
+        for (j = 0; j < col; j++)
         {
-            if (sparseMatrix[i][j] != 0)
-            {
-                count++;
-            }
+            cin >> sparse_Matrix[i][j];
         }
     }
-
-    // Create linear representation array
-    int linear[3][count]; // 3 columns: row, column, value
-
-    // Store non-zero elements in linear representation
-    int k = 0;
-    for (int i = 0; i < R; i++)
+    for (i = 0; i < row; ++i)
     {
-        for (int j = 0; j < C; j++)
+        for (j = 0; j < col; ++j)
         {
-            if (sparseMatrix[i][j] != 0)
+            if (sparse_Matrix[i][j] != 0)
             {
-                linear[0][k] = i;                  // Row index
-                linear[1][k] = j;                  // Column index
-                linear[2][k] = sparseMatrix[i][j]; // Value
+                linear[k][0] = i;
+                linear[k][1] = j;
+                linear[k][2] = sparse_Matrix[i][j];
                 k++;
             }
         }
     }
-
-    // Display linear representation
-    cout << "Linear Representation of Sparse Matrix:\n";
-    cout << "Row\tColumn\tValue\n";
-    for (int i = 0; i < count; i++)
+    cout << "The Linear representation of the sparse matrix :" << endl;
+    for (i = 0; i < k; ++i)
     {
-        cout << linear[0][i] << "\t" << linear[1][i] << "\t" << linear[2][i] << endl;
+        cout << "(" << linear[i][0] << "," << linear[i][1] << "):" << linear[i][2] << endl;
     }
+}
 
+int main()
+{
+    int row, col;
+    cout << "Enter number of rows: " << endl;
+    cin >> row;
+    cout << "Enter number of columns: " << endl;
+    cin >> col;
+    sparseToLinear(row, col);
     return 0;
 }
