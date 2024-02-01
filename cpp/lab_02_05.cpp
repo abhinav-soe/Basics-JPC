@@ -1,5 +1,5 @@
-// Write a C++ program using stack which will check that the given string belongs to grammar L =
-// {wcw R | w{a, b} * }(Where w R is the reverse of w and c is in middle) or not .(You can use stack library)
+// Write a C++ program using a stack to determine if an input character string is of the form a ^ ib ^ i where i >=1
+// (You can use stack library)
 #include <iostream>
 #include <string>
 #include <stack>
@@ -7,15 +7,23 @@ using namespace std;
 bool isValidString(string str)
 {
     stack<char> Stack;
-    for (int i = 0; i < (str.length() / 2); i += 1)
+    // int counta = 0, countb = 0;
+    for (int i = 0; i < str.length(); i++)
     {
-        Stack.push(str[i]);
-    }
-    for (int j = ((str.length()) / 2) + 1; j < str.length(); j += 1)
-    {
-        if (!Stack.empty() && Stack.top() == str[j])
+        if (str[i] == 'a')
         {
-            Stack.pop();
+            Stack.push(str[i]);
+        }
+        else if (str[i] == 'b')
+        {
+            if (Stack.empty() != true)
+            {
+                Stack.pop();
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
