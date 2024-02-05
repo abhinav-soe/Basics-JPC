@@ -7,7 +7,6 @@ using namespace std;
 bool isValidString(string str)
 {
     stack<char> Stack;
-    // int counta = 0, countb = 0;
     for (int i = 0; i < str.length(); i++)
     {
         if (str[i] == 'a')

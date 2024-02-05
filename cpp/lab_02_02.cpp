@@ -45,6 +45,5 @@ int main()
         cin >> coefficients[i];
     }
     PolynomialMatrix(coefficients, degree);
-
     return 0;
 }
