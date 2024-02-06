@@ -15,15 +15,15 @@ int reverseNum(int num)
         a = a / 10;
         numStack.push(digit);
     }
-    int numOfDigits = numStack.size();
-    for (int i = 0; i < numOfDigits; i += 1)
+    int power = 1;
+    while (!numStack.empty())
     {
-        revNum += numStack.top() * pow(10, i);
+        revNum += numStack.top() * power;
         numStack.pop();
+        power *= 10;
     }
     return revNum;
 }
-
 int main()
 {
     int num;
