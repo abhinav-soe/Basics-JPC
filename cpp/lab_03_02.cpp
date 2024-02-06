@@ -65,10 +65,9 @@ int postfixToAnswer(const string postfix)
 int main()
 {
     string postfix;
-    cout << "Enter String";
+    cout << "Enter String ";
     getline(cin, postfix);
     int result = postfixToAnswer(postfix);
-    cout << "Result is :\n"
-         << result << endl;
+    cout << "Result is :" << result << endl;
     return 0;
 }
